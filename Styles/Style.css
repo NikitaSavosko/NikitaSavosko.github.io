@@ -1,0 +1,984 @@
+:root {
+    --white-color: #FFFFFF;
+    --text-color: #061224E5;
+    --blue-color: #1064E5;
+    --blue-color-active: #0046B0;
+    --gray-color: #595A5B66;
+    --bright-gray-color: #E5E5E5;
+}
+
+body {
+    background-color: var(--white-color);
+    margin: 0%;
+}
+
+#slider {
+    position: relative;
+    width: 100%;
+    height: 676px;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+    left: 100%;
+    opacity: 0;
+    z-index: 0;
+}
+
+.slide.active {
+    left: 0;
+    opacity: 1;
+    z-index: 1;
+}
+
+.slide.previous {
+    left: -100%;
+}
+
+.HeaderBlockMenu {
+    display: flex;
+    width: 100%;
+    height: 90px;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    background-color: transparent;
+    z-index: 1000;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.numbersSVG {
+    max-width: 30%;
+    max-height: 30%;
+}
+
+.HeaderBlockMenu.scrolled {
+    background-color: var(--white-color);
+}
+
+#HeaderMenu {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.LogoImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#HeaderMenuBlock {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    width: 100%;
+    column-gap: 1%;
+}
+
+.MainPageScroll {
+    display: flex;
+    flex-direction: column;
+}
+
+.HeaderMenuBlocksText {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.HeaderMenuBlocksText:hover {
+    background-color: #DEEEFC;
+}
+
+.HeaderMenuBlocks {
+    display: flex;
+    position: relative;
+    display: inline-block;
+    align-items: center;
+    cursor: pointer;
+}
+
+.HeaderMenuBlocks:hover .HeaderMenuText {
+    background-color: #DEEEFC;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--white-color);
+    min-width: 100%;
+    z-index: 1;
+    box-shadow: -5px 5px 15px rgba(114, 114, 114, 0.1);
+}
+
+.dropdown-content a{
+    color: var(--text-color);
+    padding: 5% 7%;
+    text-decoration: none;
+    font-size: 2vh;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--bright-gray-color);
+}
+
+.HeaderMenuBlocks:hover .dropdown-content {
+    display: block;
+}
+
+.BlueDotsBlock {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    position: relative;
+    top: -30px;
+    z-index: 1;
+}
+
+.BlueDotsBlock2 {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+}
+
+.BlueDot {
+    background-color: transparent;
+    border: 2px solid var(--blue-color);
+    width: 8px;
+    height: 8px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.BlueDot2 {
+    background-color: transparent;
+    border: 2px solid var(--blue-color);
+    width: 8px;
+    height: 8px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.BlueDot.Filled {
+    background-color: var(--blue-color);
+}
+
+.BlueDot2.Filled {
+    background-color: var(--blue-color);
+}
+
+#HeaderImage {
+    background-image: url(../Images/box.png);
+    width: 100%;
+    height: 676px;
+}
+
+#HeaderImage2 {
+    background-image: url(../Images/box2.png);
+    width: 100%;
+    height: 676px;
+}
+
+#HeaderImage3 {
+    background-image: url(../Images/box3.png);
+    width: 100%;
+    height: 676px;
+}
+
+#Header {
+    width: 100%;
+    height: 656px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+p {
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: var(--text-color);
+    margin: 0%;
+}
+
+a {
+    text-decoration: none;
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: var(--text-color);
+    margin: 0%;
+    font-size: 1vw;
+}
+
+#SignyLogo {
+    width: 130px;
+    height: 40px;
+}
+
+.HeaderMenuText {
+    font-size: 1vw;
+    color: var(--text-color);
+    font-weight: 500;
+    padding: 11px 16px;
+    cursor: pointer;
+}
+
+.ArrowDown {
+    border: solid var(--text-color);
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    margin-left: 5px;
+    margin-bottom: 4px;
+}
+
+.Buttons {
+    border-radius: 50px;
+    border: 2px solid var(--blue-color);
+    padding: 1% 2%;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+#HeaderMenuButtonOne {
+    background-color: transparent;
+    color: var(--text-color);
+    font-size: 1vw;
+}
+
+#HeaderMenuButtonOne:hover {
+    background-color: var(--blue-color);
+    color: var(--white-color);
+}
+
+#HeaderMenuButtonOne:active {
+    background-color: var(--blue-color-active);
+    color: var(--white-color);
+    border-color: var(--blue-color-active);
+}
+
+#HeaderMenuButtonOne:disabled {
+    background-color: transparent;
+    color: var(--gray-color);
+    border-color: var(--gray-color);
+}
+
+#HeaderMenuButtonTwo {
+    background-color: var(--blue-color);
+    color: var(--white-color);
+    font-size: 1vw;
+}
+
+#HeaderMenuButtonTwo:hover {
+    background-color: transparent;
+    color: var(--blue-color);
+}
+
+#HeaderMenuButtonTwo:active {
+    background-color: var(--blue-color-active);
+    border: 2px solid var(--blue-color-active);
+    color: var(--white-color);
+}
+
+#HeaderMenuButtonTwo:disabled {
+    background-color: var(--blue-color);
+    color: var(--white-color);
+}
+
+#HeaderInformationBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    width: 40%;
+    height: 100%;
+    margin-left: 5%;
+    margin-right: 45%;
+    margin-top: 140px;
+}
+
+.SerifFont {
+    font-family: 'IBM Plex Serif', serif;
+    font-weight: 500;
+    color: var(--text-color);
+    font-size: 2.5vw;
+    margin: 0%;
+}
+
+#HeaderInformationButton {
+    background-color: var(--blue-color);
+    color: var(--white-color);
+    width: 50%;
+    padding: 2% 3%;
+    font-size: 1vw;
+}
+
+#HeaderInformationButton:hover {
+    background-color: transparent;
+    color: var(--blue-color);
+}
+
+#HeaderInformationButton:active {
+    background-color: var(--blue-color-active);
+    border: 2px solid var(--blue-color-active);
+    color: var(--white-color);
+}
+
+#QuickRegistration {
+    font-size: 1.5vw;
+    color: var(--text-color);
+    font-weight: 500;
+    margin-top: 14px;
+    margin-bottom: 14px;
+}
+
+#InformationText {
+    font-size: 1vw;
+    color: var(--text-color);
+    font-weight: 400;
+    margin-bottom: 31px;
+}
+
+#SecondInformation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 3% 0;
+}
+
+#SecondInformationBlock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+#ThirdInformation {
+    display: flex;
+    flex-direction: column;
+    background-color: #D8F1F0;
+    width: 100%;
+    height: 100%;
+    row-gap: 40px;
+    padding: 3% 0;
+    flex-wrap: wrap;
+}
+
+.HorizontalSecondInformationBlock {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 5%;
+}
+
+.VerticalSecondInformationBlock {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    width: 226px;
+}
+
+.VerticalSecondInformationText1 {
+    color: var(--text-color);
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.VerticalSecondInformationText2 {
+    color: var(--text-color);
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0%;
+}
+
+.ThirdInformationBlock {
+    display: flex;
+    width: 100%;
+    height: 50%;
+    flex-wrap: wrap;
+
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.THirdInformationBlockImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.BlocksThirdInformationBlock {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 30%;
+}
+
+.List {
+    list-style: none;
+    line-height: 1.5;
+}
+
+.List li {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--text-color);
+    position: relative;
+}
+
+.List li::before {
+    content: "-";
+    position: absolute;
+    left: -20px;
+}
+
+#KnowMoreButton {
+    background-color: transparent;
+    width: 50%;
+    padding: 2% 3%;
+}
+
+#KnowMoreButton:hover {
+    background-color: var(--blue-color);
+    color: var(--white-color);
+}
+
+#KnowMoreButton:active {
+    background-color: var(--blue-color-active);
+    color: var(--white-color);
+    border: 2px solid var(--blue-color-active);
+}
+
+#RegistrationButton {
+    background-color: var(--blue-color);
+    color: var(--white-color);
+    width: 50%;
+    padding: 2% 3%;
+}
+
+#RegistrationButton:hover {
+    background-color: transparent;
+    color: var(--blue-color);
+}
+
+#RegistrationButton:active {
+    background-color: var(--blue-color-active);
+    color: var(--white-color);
+    border-color: var(--blue-color-active);
+}
+
+#FourthInformation {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    row-gap: 30px;
+    padding: 3% 0;
+}
+
+#FourthInformationBlock {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1%;
+}
+
+.FourthInformationBlocks {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    width: 256px;
+    background-color: #DEEEFC;
+    padding: 32px;
+}
+
+.FirstTextCard {
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 40px;
+}
+
+.SecondTextCard {
+    font-size: 16px;
+}
+
+.ThirdBigTextCard {
+    display: inline-flex;
+    justify-content: start;
+    align-items: baseline;
+}
+
+.BigTextCard {
+    font-size: 48px;
+    font-weight: 700;
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+.ThirdTextCard {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.FourthInformationButtons {
+    border-radius: 50px;
+    border: 2px solid var(--blue-color);
+    background-color: var(--blue-color);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 12px;
+    color: var(--white-color);
+    cursor: pointer;
+    width: 100%;
+    padding: 11px 32px;
+}
+
+.FourthInformationButtons:hover {
+    background-color: transparent;
+    color: var(--blue-color);
+}
+
+.FourthInformationButtons:active {
+    background-color: var(--blue-color-active);
+    border-color: var(--blue-color-active);
+    color: var(--white-color);
+}
+
+#FifthInformation {
+    background-color: #D8F1F0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0%;
+}
+
+#FifthInformationBigTExt {
+    font-size: 73px;
+    font-weight: 500;
+    margin-top: 3%;
+}
+
+#FifthInformationText2 {
+    font-size: 40px;
+    font-weight: 500;
+}
+
+#FifthInformationText3 {
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 3%;
+}
+
+#SixthInformation {
+    width: 100%;
+    height: 100%;
+    padding: 3% 0;
+    row-gap: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#SixthInformationText1 {
+    font-size: 40px;
+    font-weight: 500;
+}
+
+#SixthInformationBlocks {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10%;
+}
+
+.FourImages {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#SeventhInformation {
+    background-color: #D8F1F0;
+    width: 100%;
+    height: 100%;
+    padding: 3% 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#SeventhInformationBlock {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    column-gap: 3%;
+}
+
+.SeventhInformationImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#SeventhInformationText {
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 3%;
+}
+
+.SeventhInformationCard {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: start;
+}
+
+.SeventhInformationSmallText {
+    font-size: 14px;
+    font-weight: 500;
+    margin: 10px 0px;
+}
+
+.SeventhinformationText {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+#EighthInformation {
+    width: 100%;
+    height: 100%;
+    padding: 3% 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.VideoContainer {
+    background-image: url(../Images/Video.png);
+    width: 734px;
+    height: 451px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.VideoContainerButton {
+    cursor: pointer;
+}
+
+.VideoContainerButton:hover {
+    width: 15%;
+}
+
+#EighthInformationText {
+    font-size: 40px;
+    font-weight: 500;
+}
+
+#Ninethinformation {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: end;
+    width: 100%;
+    height: 100%;
+    background-color: #DEEEFC;
+}
+
+.NinethINformationTextBlock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.ListPlusBlock {
+    width: 35%;
+    margin-right: 30%;
+    display: flex;
+}
+
+#NinethinformationText {
+    font-size: 40px;
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+.ListPlus {
+    list-style: none;
+    padding-left: 0%;
+    line-height: 1.5;
+    cursor: default;
+}
+
+.ListPlus li {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: var(--text-color);
+    position: relative;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.ListPlus li::before {
+    content: "+";
+    color: var(--blue-color);
+    font-weight: bold;
+    position: absolute;
+    left: -20px;
+}
+
+.ListPlus li[data-expanded="true"]::before {
+    content: "-";
+}
+
+.ListPlus li[data-expanded="true"] {
+    font-weight: bolder;
+}
+
+.HiddenText {
+    display: none;
+    line-height: 1;
+    font-size: 18px;
+    font-weight: 400;
+    padding-left: 20px;
+}
+
+.HiddenText::before {
+    content: "-";
+    color: var(--text-color);
+    position: absolute;
+    left: -5px;
+}
+
+.ListPlus li[data-expanded="true"] .HiddenText {
+    display: block;
+    left: -20px;
+}
+
+#TenthInformation {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+    padding: 3% 0;
+}
+
+#TenthInformationBigText {
+    font-size: 40px;
+    font-weight: 500;
+}
+
+#TenthInformationBlock {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#TenthInformationBlockRow {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.SendButton {
+    background-color: var(--blue-color);
+    border: 2px solid var(--blue-color);
+    color: var(--white-color);
+    border-radius: 50px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 11px 32px;
+    cursor: pointer;
+}
+
+.SendButton:hover {
+    background-color: transparent;
+    color: var(--blue-color);
+}
+
+.SendButton:active {
+    background-color: var(--blue-color-active);
+    color: var(--white-color);
+    border-color: var(--blue-color-active);
+}
+
+.SearchBar {
+    padding: 11px 32px;
+    background-color: var(--white-color);
+    border: 1px solid var(--blue-color);
+    border-radius: 50px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    width: 399px;
+    margin-right: 5%;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.SearchBar:active {
+    border: 2px solid var(--blue-color);
+}
+
+.SearchBar::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+}
+
+#TenthInformationBlockText {
+    font-size: 18px;
+    font-weight: 400;
+    margin: 5% 0%;
+}
+
+#Footer {
+    width: 100%;
+    height: 100%;
+    background-color: var(--text-color);
+}
+
+.FooterGrid {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(6, 10fr);
+}
+
+.FooterLogo {
+    grid-column: 2 / 4;
+    grid-row: 2;
+    align-items: center;
+    justify-content: start;
+    display: flex;
+}
+
+.FooterSmallText {
+    font-size: 0.8vw;
+    font-weight: 400;
+    color: var(--white-color);
+    grid-column: 2 / 4;
+    grid-row: 5;
+}
+
+.FooterTextBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    grid-column: 5;
+    grid-row: 2;
+    row-gap: 10%;
+}
+
+.FooterText {
+    font-size: 0.9vw;
+    font-weight: 500;
+    color: var(--white-color);
+}
+
+.FooterTextBlock2 {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    grid-column: 5;
+    grid-row: 3 / 5;
+    row-gap: 10%;
+
+}
+
+.FooterSmallText2 {
+    grid-column: 5 / 7;
+    grid-row: 5;
+    font-size: 0.8vw;
+    font-weight: 400;
+    color: var(--white-color);
+}
+
+.FooterTextBlock3 {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    grid-column: 6;
+    grid-row: 2;
+    row-gap: 10%;
+}
+
+.FooterSmallText3 {
+    grid-column: 6 / 8;
+    grid-row: 5;
+    font-size: 0.8vw;
+    font-weight: 400;
+    color: var(--white-color);
+}
+
+.FooterTextBlock4 {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    grid-column: 9 / 11;
+    grid-row: 2;
+    row-gap: 10%;
+}
+
+.FooterTextBlock5 {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    grid-column: 11 / 13;
+    grid-row: 2 / 6;
+    row-gap: 5%;
+}
+
+.FooterSmallText4 {
+    font-size: 0.9vw;
+    font-weight: 400;
+    color: var(--white-color);
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
